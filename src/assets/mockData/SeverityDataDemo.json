@@ -1,0 +1,17 @@
+[
+		{
+		"Severity":"Icon A",
+		"DefNum":"55",
+		"Def":"8"
+		},
+		{
+		"Severity":"Icon B",
+		"DefNum":"210",
+		"Def":"22"
+		},
+		{
+		"Severity":"Icon C",
+		"DefNum":"123",
+		"Def":"57"
+		}
+]

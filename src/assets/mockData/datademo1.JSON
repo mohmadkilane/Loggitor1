@@ -1,0 +1,82 @@
+[
+		{
+		"SeqID":"1",
+		"App":"BLM Cust",
+		"Code":"000014",
+		"Severity":"Icon A",
+		"Description":"Some error description",
+		"Solution":"Solution description"
+		},
+		{
+		"SeqID":"2",
+		"App":"CGN Cust",
+		"Code":"000123",
+		"Severity":"Icon A",
+		"Description":"Some error description",
+		"Solution":"Solution description"
+		},
+		{
+		"SeqID":"3",
+		"App":"BLM Cust",
+		"Code":"000004",
+		"Severity":"Icon A",
+		"Description":"Some error description",
+		"Solution":"Solution description"
+		},
+		{
+		"SeqID":"4",
+		"App":"BLM Core",
+		"Code":"000227",
+		"Severity":"Icon A",
+		"Description":"Some error description",
+		"Solution":"Solution description"
+		},
+		{
+		"SeqID":"2",
+		"App":"CGN Cust",
+		"Code":"000123",
+		"Severity":"Icon A",
+		"Description":"Some error description",
+		"Solution":"Solution description"
+		},
+		{
+		"SeqID":"3",
+		"App":"BLM Cust",
+		"Code":"000004",
+		"Severity":"Icon A",
+		"Description":"Some error description",
+		"Solution":"Solution description"
+		},
+		{
+		"SeqID":"4",
+		"App":"BLM Core",
+		"Code":"000227",
+		"Severity":"Icon A",
+		"Description":"Some error description",
+		"Solution":"Solution description"
+		},
+		{
+		"SeqID":"2",
+		"App":"CGN Cust",
+		"Code":"000123",
+		"Severity":"Icon A",
+		"Description":"Some error description",
+		"Solution":"Solution description"
+		},
+		{
+		"SeqID":"3",
+		"App":"BLM Cust",
+		"Code":"000004",
+		"Severity":"Icon A",
+		"Description":"Some error description",
+		"Solution":"Solution description"
+		},
+		{
+		"SeqID":"4",
+		"App":"BLM Core",
+		"Code":"000227",
+		"Severity":"Icon A",
+		"Description":"Some error description",
+		"Solution":"Solution description"
+		}
+		]

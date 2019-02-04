@@ -1,0 +1,16 @@
+<mat-table  [dataSource]="dataSource" matSort matSortActive="severity" matSoryDirection="asc" matSortDisableClear>
+  <ng-container matColumnDef="severity">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Severity</mat-header-cell>
+      <mat-cell *matCellDef="let severity">{{severity.severity}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="defnum">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Defnum</mat-header-cell>
+      <mat-cell *matCellDef="let severity">{{severity.defnum}}</mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="percentage">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Percentage</mat-header-cell>
+      <mat-cell *matCellDef="let severity">{{severity.percentage}}</mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColums" color="primary"></mat-header-row>
+    <mat-row *matRowDef="let row; columns:displayedColums"></mat-row>
+</mat-table>

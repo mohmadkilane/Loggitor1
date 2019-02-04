@@ -1,0 +1,28 @@
+
+ <div>
+  <mat-table [dataSource]= "dataSource"  matSort  >
+      <ng-container matColumnDef="SeqId">
+        <mat-header-cell *matHeaderCellDef  >SeqID </mat-header-cell>
+        <mat-cell *matCellDef="let defect">{{defect.seqid}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="App">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>App </mat-header-cell>
+          <mat-cell *matCellDef="let defect">{{defect.appName+" "+ defect.appType }}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="Code">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Code </mat-header-cell>
+          <mat-cell *matCellDef="let defect">{{defect.defCode}}</mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="Severity">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Severity </mat-header-cell>
+          <mat-cell *matCellDef="let defect">{{defect.severity}}</mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns" color="primary"></mat-header-row>
+      <mat-row *matRowDef="let row; columns:displayedColumns"></mat-row>
+    </mat-table>
+  <mat-paginator #paginator [pageSizeOptions]="[5, 10, 15 ]" [pageSize]="5" >
+  </mat-paginator>
+</div>
+
+
