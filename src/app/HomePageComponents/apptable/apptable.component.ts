@@ -1,7 +1,7 @@
-import { AppService } from './../../Services/App/App.service';
+import { AppService } from './../../Services/App/app.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort, MatSortable, MatTableDataSource} from '@angular/material';
-import { AppModel } from './../../models/apps.model';
+import { AppModel } from './../../models/Apps.model';
 
 @Component({
   selector: 'app-apptable',
@@ -22,5 +22,4 @@ export class ApptableComponent implements OnInit {
       this.dataSource.sort = this.sort;
     });
   }
-
 }
