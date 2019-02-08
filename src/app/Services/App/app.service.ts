@@ -28,6 +28,7 @@ import { Observable } from 'rxjs/Observable';
 })
 export class AppService {
   private serviceUrl = 'https://amdocslogfiles.herokuapp.com/AppPercent';
+  public serviceUrlCust = '';
 
   constructor(private http: HttpClient) { }
   getChart(): Observable<Pie[] > {
@@ -35,7 +36,12 @@ export class AppService {
       map(responce => responce.pie));
   }
   getAppModel(): Observable<AppModel[]> {
-    return this.http.get<AppModel[]>(this.serviceUrl);
+    return this.http.get<AppModel[]>(this.serviceUrl + this.serviceUrlCust);
+  }
+
+  setServiceUrlCust(urlCost: string) {
+    // this.serviceUrlCust = urlCost;
+    this.serviceUrl = urlCost;
   }
 
 }
