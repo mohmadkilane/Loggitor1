@@ -1,15 +1,23 @@
 <mat-table  [dataSource]="dataSource" matSort matSortActive="name" matSoryDirection="asc" matSortDisableClear>
   <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>App Name</mat-header-cell>
-      <mat-cell *matCellDef="let app">{{app.name}}</mat-cell>
+
+      <div *ngIf= " getMat_header === 'AppName'" >
+          <mat-header-cell *matHeaderCellDef mat-sort-header>App Name</mat-header-cell>
+          <mat-cell *matCellDef="let AppModel" (click)="clickEvent(AppModel.name)">{{AppModel.name}}</mat-cell>
+      </div>
+      <div *ngIf=" getMat_header === 'ErrorCode'">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Error Code</mat-header-cell>
+          <mat-cell *matCellDef="let AppModel" >{{AppModel.errorCode}}</mat-cell>
+      </div>
+
     </ng-container>
     <ng-container matColumnDef="defnum">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Defect num</mat-header-cell>
-      <mat-cell *matCellDef="let app">{{app.defnum}}</mat-cell>
+      <mat-cell *matCellDef="let AppModel" (click)="clickEvent(AppModel.name)">{{AppModel.defnum}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="percentage">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Percent</mat-header-cell>
-      <mat-cell *matCellDef="let app">{{app.percentage}}</mat-cell>
+      <mat-cell *matCellDef="let AppModel">{{AppModel.percentage}}</mat-cell>
     </ng-container>
     <mat-header-row *matHeaderRowDef="displayedColums" color="primary"></mat-header-row>
     <mat-row *matRowDef="let row; columns:displayedColums"></mat-row>
