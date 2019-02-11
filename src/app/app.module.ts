@@ -18,7 +18,10 @@ import { SeverityPercentTableComponent } from './HomePageComponents/severity-per
 import { DefectLogComponent } from './HomePageComponents/DefectLog/defect-log.component';
 import { PieChartComponent } from './HomePageComponents/pie-chart/pie-chart.component';
 import { BarChartComponent } from './HomePageComponents/bar-chart/bar-chart.component';
+
+import { StackedChartComponent } from './HomePageComponents/stacked-chart/stacked-chart.component';
 import { AppDetailsPageComponent } from './app-details-page/app-details-page.component';
+
 
  @NgModule({
   declarations: [
@@ -28,7 +31,11 @@ import { AppDetailsPageComponent } from './app-details-page/app-details-page.com
     SeverityPercentTableComponent,
     PieChartComponent,
     BarChartComponent,
+
+    StackedChartComponent
+
     AppDetailsPageComponent,
+
   ],
   imports: [
     BrowserModule,
