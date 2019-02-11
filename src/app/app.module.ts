@@ -18,6 +18,7 @@ import { SeverityPercentTableComponent } from './HomePageComponents/severity-per
 import { DefectLogComponent } from './HomePageComponents/DefectLog/defect-log.component';
 import { PieChartComponent } from './HomePageComponents/pie-chart/pie-chart.component';
 import { BarChartComponent } from './HomePageComponents/bar-chart/bar-chart.component';
+import { StackedChartComponent } from './HomePageComponents/stacked-chart/stacked-chart.component';
 
  @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { BarChartComponent } from './HomePageComponents/bar-chart/bar-chart.comp
     SeverityPercentTableComponent,
     PieChartComponent,
     BarChartComponent,
+    StackedChartComponent
   ],
   imports: [
     BrowserModule,
