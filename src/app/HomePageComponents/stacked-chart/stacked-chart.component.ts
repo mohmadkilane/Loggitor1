@@ -1,12 +1,15 @@
+import { Component, OnInit } from '@angular/core';
 
 import { Def } from '../../models/appPercent';
 import { AppPercentService } from '../../Services/Percent/app-percent.service';
-import { Component, OnInit } from '@angular/core';
+
 @Component({
-  selector: 'app-bar-chart',
-  templateUrl: './bar-chart.component.html'
+  selector: 'app-stacked-chart',
+  templateUrl: './stacked-chart.component.html',
+  styleUrls: ['./stacked-chart.component.css']
 })
-export class BarChartComponent implements OnInit {
+
+export class StackedChartComponent implements OnInit {
   public barChartOptions: any = {
     scaleShowVerticalLines: false,
     responsive: true
@@ -45,7 +48,7 @@ public barChartData: any[] = [
    }
 
 
-  ngOnInit() {    this.defservice.getdef().
+  ngOnInit() {    this.defservice.getdefStatic().
     subscribe(defss => {
      // this.barChartLabels = [];
       this.defs = defss;
@@ -88,4 +91,15 @@ public barChartData: any[] = [
 
   }
 
+
 }
+
+
+
+
+
+
+
+
+
+
