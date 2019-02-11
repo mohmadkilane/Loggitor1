@@ -1,0 +1,26 @@
+[
+  {
+  "name": "1.1-8.1",
+  "defnum": 39,
+  "percentage": "88.64%",
+  "critical": 0,
+  "error": 38,
+  "warning": 1
+  },
+  {
+  "name": "9.1-16.1",
+  "defnum": 1,
+  "percentage": "2.27%",
+  "critical": 0,
+  "error": 1,
+  "warning": 0
+  },
+  {
+  "name": "17.1-24.1",
+  "defnum": 4,
+  "percentage": "9.09%",
+  "critical": 3,
+  "error": 0,
+  "warning": 1
+  }
+  ]
