@@ -1,7 +1,7 @@
-<mat-table  [dataSource]="dataSource" matSort matSortActive="severity" matSoryDirection="asc" matSortDisableClear>
+<mat-table [dataSource]="dataSource" matSort matSortActive="severity" matSoryDirection="asc" matSortDisableClear>
   <ng-container matColumnDef="severity">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Severity</mat-header-cell>
-      <mat-cell *matCellDef="let severity">{{severity.severity}}</mat-cell>
+      <mat-cell *matCellDef="let severity" (click)="clickEvent()">{{severity.severity}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="defnum">
       <mat-header-cell *matHeaderCellDef mat-sort-header>Defnum</mat-header-cell>

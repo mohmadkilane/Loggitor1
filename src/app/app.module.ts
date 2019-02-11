@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http' ;
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations' ;
-import {MatTableModule, MatSortModule, MatPaginatorModule} from '@angular/material';
+import {MatTableModule, MatSortModule, MatPaginatorModule, MatDialogModule} from '@angular/material';
 import { AppComponent } from './app.component';
 import { ChartsModule } from 'ng2-charts';
 // Imports Of services
@@ -18,7 +18,10 @@ import { SeverityPercentTableComponent } from './HomePageComponents/severity-per
 import { DefectLogComponent } from './HomePageComponents/DefectLog/defect-log.component';
 import { PieChartComponent } from './HomePageComponents/pie-chart/pie-chart.component';
 import { BarChartComponent } from './HomePageComponents/bar-chart/bar-chart.component';
+
 import { StackedChartComponent } from './HomePageComponents/stacked-chart/stacked-chart.component';
+import { AppDetailsPageComponent } from './app-details-page/app-details-page.component';
+
 
  @NgModule({
   declarations: [
@@ -28,7 +31,11 @@ import { StackedChartComponent } from './HomePageComponents/stacked-chart/stacke
     SeverityPercentTableComponent,
     PieChartComponent,
     BarChartComponent,
+
     StackedChartComponent
+
+    AppDetailsPageComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -39,13 +46,15 @@ import { StackedChartComponent } from './HomePageComponents/stacked-chart/stacke
     MatSortModule,
     FormsModule,
     MatPaginatorModule,
-    ChartsModule
+    ChartsModule,
+    MatDialogModule
   ],
   providers: [
     DefectService,
     AppService,
     SeverityService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [AppDetailsPageComponent]
 })
 export class AppModule { }

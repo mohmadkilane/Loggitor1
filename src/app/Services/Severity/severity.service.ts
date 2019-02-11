@@ -8,11 +8,16 @@ import { Observable } from 'rxjs/Observable';
 })
 export class SeverityService {
   private serviceUrl = 'https://amdocslogfiles.herokuapp.com/SeverityPercent';
-
+  public serviceUrlCust = '';
   constructor(private http: HttpClient) { }
 
   getSeverity(): Observable<Severity[]> {
-    return this.http.get<Severity[]>(this.serviceUrl);
+    return this.http.get<Severity[]>(this.serviceUrl + this.serviceUrlCust);
+  }
+
+  setServiceUrlCust(urlCost: string) {
+    // this.serviceUrlCust = urlCost;
+    this.serviceUrl = urlCost;
   }
 
 }
