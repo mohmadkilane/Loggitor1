@@ -13,4 +13,9 @@ export class DefectService {
   getDefect(): Observable<Defect[]> {
     return this.http.get<Defect[]>(this.serviceUrl);
   }
+
+  setServiceUrlCust(urlCost: string) {
+    // this.serviceUrlCust = urlCost;
+    this.serviceUrl = urlCost;
+  }
 }
