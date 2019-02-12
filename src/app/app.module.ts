@@ -31,9 +31,7 @@ import { AppDetailsPageComponent } from './app-details-page/app-details-page.com
     SeverityPercentTableComponent,
     PieChartComponent,
     BarChartComponent,
-
-    StackedChartComponent
-
+    StackedChartComponent,
     AppDetailsPageComponent,
 
   ],
