@@ -1,16 +1,22 @@
 
+
+
  <ul>
   <li  class="dropdown">
   <a href="#home" class="btn-secondary dropdown-toggle">Home</a>
      <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <a class="dropdown-item" href="#">Log</a><br>
-    <a class="dropdown-item" href="#">Roles</a><br>
-    <a class="dropdown-item" href="#">Actions</a><br>
+    <a class="dropdown-item" href="https://adminloggitor.herokuapp.com/#home">Admin</a><br>
+    <a class="dropdown-item" href="https://adminloggitor.herokuapp.com/#home">Actions</a><br>
+    <a class="dropdown-item" href="https://loggitor1.herokuapp.com/src">Loggitor</a><br>
   </div>
     </li>
-  <li><a href="#Rules">Rules</a></li>
-  <li><a href="#Solution">Solutions</a></li>
-  <li><a href="#About">About</a></li>
+  <!--<li><a href="https://loggitor1.herokuapp.com/src">Loggitor</a></li>
+  <li><a href="https://adminloggitor.herokuapp.com/#home">Admin</a></li>
+  <li><a href="https://loggitor-fe.herokuapp.com/home">Actions</a></li>
+  -->
+  <li><a routerLink="/loggitor">Loggitor</a></li>
+  <li><a routerLink="/admin">Admin</a></li>
+  <li><a routerLink="/actions">Actions</a></li>
   <li style="float: right"><img src="./assets/imgs/a.png" alt="Amdocs Logo" height="50"></li>
   </ul>
   <br>
@@ -64,5 +70,9 @@
 
 
 
-<input type="file" />
 
+
+
+
+
+<router-outlet></router-outlet>
