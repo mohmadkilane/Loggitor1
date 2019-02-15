@@ -1,7 +1,9 @@
+import { AppService } from './../../Services/App/app.service';
+import { AppModel } from './../../models/Apps.model';
 
-import { Def } from '../../models/appPercent';
 import { AppPercentService } from '../../Services/Percent/app-percent.service';
 import { Component, OnInit } from '@angular/core';
+
 @Component({
   selector: 'app-pie-chart',
   templateUrl: './pie-chart.component.html',
@@ -9,10 +11,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PieChartComponent implements OnInit {
 
-    public pieChartLabels: string[];
-    public pieChartData: number[] = [300, 500, 100];
+    public pieChartLabels: String[];
+    public pieChartData: number[] = [0, 0, 0];
     public pieChartType: String = 'pie';
-    public defs: Def[];
+    public appModels: AppModel[];
 
     // events
     public chartClicked(e: any): void {
@@ -22,23 +24,26 @@ export class PieChartComponent implements OnInit {
     public chartHovered(e: any): void {
       console.log(e);
     }
-    constructor(private defservice: AppPercentService) {}
+    constructor(private defservice: AppService) {}
     ngOnInit() {
-      this.defservice.getdef().
-      subscribe(defss => {
 
-        this.defs = defss;
+      this.defservice.getAppModel().
+      subscribe(BackAppModels => {
 
-  this.pieChartLabels = [];
+        this.appModels = BackAppModels;
+        this.pieChartLabels = [];
 
-        for (let i = 0; i < this.defs.length; i++) {
-          this.pieChartLabels[i] = this.defs[i].name ;
-          this.pieChartData[i] = this.defs[i].defnum ;
-        }
-
-
+          for (let i = 0; i < this.appModels.length; i++) {
+            if (this.appModels[i].name != null) {
+              this.pieChartLabels[i] = this.appModels[i].name ;
+            } else {
+              this.pieChartLabels[i] = this.appModels[i].errorCode ;
+            }
+            this.pieChartData[i] = this.appModels[i].defnum ;
+          }
       });
     }
+
   }
 
 

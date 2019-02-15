@@ -31,9 +31,7 @@ import { AppDetailsPageComponent } from './app-details-page/app-details-page.com
     SeverityPercentTableComponent,
     PieChartComponent,
     BarChartComponent,
-
-    StackedChartComponent
-
+    StackedChartComponent,
     AppDetailsPageComponent,
 
   ],
@@ -52,7 +50,10 @@ import { AppDetailsPageComponent } from './app-details-page/app-details-page.com
   providers: [
     DefectService,
     AppService,
-    SeverityService
+    SeverityService,
+    PieChartComponent,
+    ApptableComponent,
+    SeverityPercentTableComponent
   ],
   bootstrap: [AppComponent],
   entryComponents: [AppDetailsPageComponent]
