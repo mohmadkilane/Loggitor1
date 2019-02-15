@@ -1,12 +1,12 @@
 <mat-table [dataSource]="dataSource" matSort matSortActive="severity" matSoryDirection="asc" matSortDisableClear>
   <ng-container matColumnDef="severity">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Severity</mat-header-cell>
-
-      <div *ngIf= " getMat_header === 'HomePage'" >
+      <div *ngIf= " getPubupPage === 'HomePage'" >
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Severity</mat-header-cell>
           <mat-cell *matCellDef="let severity" (click)="clickEvent(severity.severity)">{{severity.severity}}</mat-cell>
       </div>
-      <div *ngIf=" getMat_header === 'PopUpPage'">
-          <mat-cell *matCellDef="let severity">{{severity.severity}}</mat-cell>
+      <div *ngIf=" getPubupPage === 'PopUpPage'">
+          <mat-header-cell *matHeaderCellDef mat-sort-header>Code</mat-header-cell>
+          <mat-cell *matCellDef="let severity">{{severity.errorCode}}</mat-cell>
       </div>
     </ng-container>
     <ng-container matColumnDef="defnum">

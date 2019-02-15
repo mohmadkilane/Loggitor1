@@ -1,3 +1,4 @@
+import { ApptableComponent } from './../apptable/apptable.component';
 import { AppService } from './../../Services/App/app.service';
 import { DefectService } from './../../Services/Defect/defect.service';
 import { AppComponent } from './../../app.component';
@@ -9,7 +10,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort, MatSortable, MatTableDataSource} from '@angular/material';
 import { MatDialog, MatDialogConfig} from '@angular/material';
 
-let mat_header = 'HomePage';
+let pubupPage = 'HomePage';
 @Component({
   selector: 'app-severity-percent-table',
   templateUrl: './severity-percent-table.component.html',
@@ -22,7 +23,9 @@ export class SeverityPercentTableComponent implements OnInit {
   constructor(private appService: AppService,
     private severityService: SeverityService,
     private defectService: DefectService,
-    private dialog: MatDialog) { }
+    private dialog: MatDialog,
+    private apptableComponent: ApptableComponent
+    ) { }
 
   ngOnInit() {
     this.severityService.getSeverity().subscribe(results => {
@@ -36,10 +39,12 @@ export class SeverityPercentTableComponent implements OnInit {
 
 
   clickEvent( severity_: String) {
-    this.appService.setServiceUrlCust('https://amdocslogfiles.herokuapp.com/AppPercentApp/' + severity_);
-    this.severityService.setServiceUrlCust('https://amdocslogfiles.herokuapp.com/SeverityPercentApp/' + severity_);
-    this.defectService.setServiceUrlCust('https://amdocslogfiles.herokuapp.com/ViewDefectsApp/' + severity_);
-    mat_header = 'PopUpPage';
+    this.apptableComponent.setMat_Header('HomePage');
+
+    this.appService.setServiceUrlCust('https://amdocslogfiles.herokuapp.com/AppPercentSeverity/' + severity_);
+    this.severityService.setServiceUrlCust('https://amdocslogfiles.herokuapp.com/SeverityPercentSeverity/' + severity_);
+    this.defectService.setServiceUrlCust('https://amdocslogfiles.herokuapp.com/ViewDefectsSeverity/' + severity_ + '/15/1');
+    pubupPage = 'PopUpPage';
 
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = false;
@@ -48,8 +53,12 @@ export class SeverityPercentTableComponent implements OnInit {
     this.dialog.open(AppDetailsPageComponent, dialogConfig);
   }
 
-  get getMat_header() {
-      return mat_header;
+  get getPubupPage() {
+      return pubupPage;
+  }
+
+  setPubUpPage(pubupPage_: string) {
+    pubupPage = pubupPage_;
   }
 
 }
