@@ -2,7 +2,10 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort, MatSortable , MatTableDataSource , MatPaginator
    , MatButton, MatIcon} from '@angular/material';
 import {DefectService } from '../../Services/Defect/defect.service' ;
-import {PageEvent} from '@angular/material';
+import { PageEvent, MatDialog } from '@angular/material';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EditPopupComponent } from './../../edit-popup/edit-popup.component';
+import { MatDialogConfig} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-defect-log',
@@ -14,13 +17,14 @@ export class DefectLogComponent implements OnInit {
   // @ViewChild(MatPaginator) paginator: MatPaginator;
   private page: any = 1 ;
   dataSource ;
-  displayedColumns = ['SeqId', 'App', 'Code', 'Severity'];
+  displayedColumns = ['SeqId', 'App', 'Code', 'Severity','Edit'];
   pageSize = 5;
  // LastPageIndex = 1 ;
   // setPageSizeOptions(setPageSizeOptionsInput: string) {
   //   this.pageSizeOptions = setPageSizeOptionsInput.split(',').map(str => +str);
   // }
-  constructor(private defectService: DefectService  ) {}
+  constructor(private defectService: DefectService,
+    private dialog: MatDialog  ) {}
 
   ngOnInit() {
     this.getDefect();
@@ -117,5 +121,11 @@ NextPage() {
   //    this.dataSource.paginator = this.paginator;
     });
   }
-
+  clickEvent() {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = false;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = '90%';
+    this.dialog.open(EditPopupComponent, dialogConfig);
+  }
 }

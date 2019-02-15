@@ -17,23 +17,27 @@
           <mat-header-cell *matHeaderCellDef mat-sort-header style="display:flex; justify-content:center;">Severity </mat-header-cell>
           <mat-cell *matCellDef="let defect" style="display:flex; justify-content:center;">{{defect.severity}}</mat-cell>
       </ng-container>
+      <ng-container matColumnDef="Edit">
+        <mat-header-cell *matHeaderCellDef mat-sort-header style="display:flex; justify-content:center;">Edit </mat-header-cell>
+        <mat-cell *matCellDef="let defect" style="display:flex; justify-content:center; "><img (click)="clickEvent()" src='https://www.clipartmax.com/png/middle/231-2319865_register-button-png-icon-edit-png.png' width=20px height=20px></mat-cell>
+    </ng-container>
 
       <mat-header-row *matHeaderRowDef="displayedColumns" color="primary"></mat-header-row>
       <mat-row *matRowDef="let row; columns:displayedColumns"></mat-row>
     </mat-table>
 <br>
 <div class="row">
-<div class="page col-4 text-white" style=" margin-bottom: -30px; margin-left: 5px;margin-right: 5px; width: 40%;">
-<button class="mat-flat-button" (click)="FirstPage()" style="margin-left: 5px;margin-right: 5px;"><mat-icon>skip_previous</mat-icon></button>
-<button class="mat-flat-button" (click)="PrevPage()" style="margin-left: 5px;margin-right: 5px;"><mat-icon>arrow_back_ios</mat-icon></button>
-<button class="mat-flat-button" (click)="NextPage()" style="margin-left: 5px;margin-right: 5px;"><mat-icon>arrow_forward_ios</mat-icon></button>
-<button class="mat-flat-button" (click)=" LastPage()" style="margin-left: 5px;margin-right: 5px;"><mat-icon>skip_next</mat-icon></button>
-<select (change)="SelectPageSize($event)" id="pagination" name="pagination" value=20 style="margin-left: 5px;margin-right: 5px;">
-  <option value=5>5</option>
-  <option value=10>10</option>
-  <option value=15>15</option>
-  <option value=20>20</option>
+<div class="page col-4 text-white" style=" margin-bottom: 0px; margin-left: 5px;margin-right: 5px; width: 50%;">
+<button (click)="FirstPage()" style="margin-left: 5px;margin-right: 5px; color:white; background-color:transparent; border-style: none;"><mat-icon>skip_previous</mat-icon></button>
+<button (click)="PrevPage()" style="margin-left: 5px;margin-right: 5px; color:white; background-color:transparent; border-style: none;"><mat-icon>arrow_back_ios</mat-icon></button>
+<button (click)="NextPage()" style="margin-left: 5px;margin-right: 5px; color:white; background-color:transparent; border-style: none;"><mat-icon>arrow_forward_ios</mat-icon></button>
+<button (click)=" LastPage()" style="margin-left: 5px;margin-right: 5px; color:white; background-color:transparent; border-style: none;"><mat-icon>skip_next</mat-icon></button>
+<select (change)="SelectPageSize($event)" id="pagination" name="pagination" value=20 style="margin-left: 5px;margin-right: 5px; color:white; background-color:transparent; border-style: none;">
+  <option style="color:black;" value=5>5</option>
+  <option style="color:black;" value=10>10</option>
+  <option style="color:black;" value=15>15</option>
+  <option style="color:black;" value=20>20</option>
 </select>
 </div>
 <!-- </mat-card> -->
-</div>
+

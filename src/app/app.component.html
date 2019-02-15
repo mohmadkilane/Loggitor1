@@ -73,9 +73,9 @@
  <li>
    <a href="#about">About</a>
  </li>
- <li><a href="#Rules">Home</a></li>
- <li><a href="#Solution">Logetor</a></li>
- <li><a href="#About">Actions</a></li>
+ <li><a (click)="LogURL()" style="cursor: pointer;">Home</a></li>
+ <li><a (click)="AdminURL()" style="cursor: pointer;">Admin</a></li>
+ <li><a (click)="ActionURL()" style="cursor: pointer;">Actions</a></li>
  <li style="float: right"><img src="./assets/imgs/a.png" alt="Amdocs Logo" height="50"></li>
 </ul>
 <div style="margin-top: 5%">{{NowDate | date: 'dd'}}/{{NowDate | date:'MM'}}/{{NowDate | date: 'yyyy'}} , {{NowDate | date: 'HH'}}:{{NowDate | date: 'mm'}}</div>
