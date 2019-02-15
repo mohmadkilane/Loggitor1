@@ -1,4 +1,13 @@
-/* .modal-body {
+
+.modal-body {
   max-height:90vmin;
   overflow-y:auto;
-} */
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}

@@ -1,7 +1,7 @@
 <mat-table  [dataSource]="dataSource" matSort matSortActive="name" matSoryDirection="asc" matSortDisableClear >
   <ng-container matColumnDef="name" >
 
-      <div *ngIf= " getMat_header === 'AppName'" >
+      <div *ngIf= " getMat_header === 'HomePage'" >
           <mat-header-cell *matHeaderCellDef mat-sort-header>App Name</mat-header-cell>
           <mat-cell *matCellDef="let AppModel" (click)="clickEvent(AppModel.name)">{{AppModel.name}}</mat-cell>
       </div>
