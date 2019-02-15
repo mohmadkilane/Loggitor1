@@ -1,4 +1,4 @@
-
+/*
 div{
   position: relative;
   left: auto;
@@ -55,4 +55,42 @@ div{
   .dropdown:hover .dropdown-content {
     display: block;
   }
+  .page button{
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    color: white;
+  } */
 
+  /* mat-cell {
+    color: white;
+    text-align: left;
+  }
+  mat-header-cell {
+    color: white;
+  text-shadow: 1px 1px 1px #ece1e1;
+    font-size: 18px;
+  }
+  mat-sidenav{
+    position: fixed;
+    overflow-x: hidden;
+    transition: 0.5s;
+    z-index: 1;
+    right: 0;
+  }
+  mat-sidenav button{
+    color:white;
+    width: 100%;
+  }
+  mat-sidenav button:hover{
+    background-color: white;
+    color:rgb(245, 161, 6); */
+    /*border-image: linear-gradient(135deg, #FFC04F 0%, #FF9921 0%, #C76BC0 100%);
+    border-image-slice: 1;
+    border-width: 2px;*/
+    /* font-size: 16px;
+    font-weight: bold;
+  } */

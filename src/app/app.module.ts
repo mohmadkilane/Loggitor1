@@ -4,7 +4,8 @@ import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http' ;
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations' ;
-import {MatTableModule, MatSortModule, MatPaginatorModule, MatDialogModule} from '@angular/material';
+import {MatTableModule, MatSortModule, MatPaginatorModule, MatDialogModule,
+   MatButtonModule , MatCardModule, MatIconModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { ChartsModule } from 'ng2-charts';
 // Imports Of services
@@ -33,7 +34,6 @@ import { AppDetailsPageComponent } from './app-details-page/app-details-page.com
     BarChartComponent,
     StackedChartComponent,
     AppDetailsPageComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -45,7 +45,10 @@ import { AppDetailsPageComponent } from './app-details-page/app-details-page.com
     FormsModule,
     MatPaginatorModule,
     ChartsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatButtonModule,
+    MatCardModule,
+    MatIconModule
   ],
   providers: [
     DefectService,

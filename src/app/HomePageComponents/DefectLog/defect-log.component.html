@@ -1,28 +1,39 @@
-
- <div>
+ <div style=" align-content: center;">
+    <!-- <mat-card class="text-white bg-dark "> -->
   <mat-table [dataSource]= "dataSource"  matSort  >
       <ng-container matColumnDef="SeqId">
-        <mat-header-cell *matHeaderCellDef  >SeqID </mat-header-cell>
-        <mat-cell *matCellDef="let defect">{{defect.seqid}}</mat-cell>
+        <mat-header-cell *matHeaderCellDef style="display:flex; justify-content:center;" >SeqID </mat-header-cell>
+        <mat-cell *matCellDef="let defect" style="display:flex; justify-content:center;">{{defect.seqid}}</mat-cell>
       </ng-container>
       <ng-container matColumnDef="App">
-          <mat-header-cell *matHeaderCellDef mat-sort-header>App </mat-header-cell>
-          <mat-cell *matCellDef="let defect">{{defect.appName+" "+ defect.appType }}</mat-cell>
+          <mat-header-cell *matHeaderCellDef mat-sort-header style="display:flex; justify-content:center;">App </mat-header-cell>
+          <mat-cell *matCellDef="let defect" style="display:flex; justify-content:center;">{{defect.appName+" "+ defect.appType }}</mat-cell>
       </ng-container>
       <ng-container matColumnDef="Code">
-          <mat-header-cell *matHeaderCellDef mat-sort-header>Code </mat-header-cell>
-          <mat-cell *matCellDef="let defect">{{defect.defCode}}</mat-cell>
+          <mat-header-cell *matHeaderCellDef mat-sort-header style="display:flex; justify-content:center;">Code </mat-header-cell>
+          <mat-cell *matCellDef="let defect" style="display:flex; justify-content:center;">{{defect.defCode}}</mat-cell>
       </ng-container>
       <ng-container matColumnDef="Severity">
-          <mat-header-cell *matHeaderCellDef mat-sort-header>Severity </mat-header-cell>
-          <mat-cell *matCellDef="let defect">{{defect.severity}}</mat-cell>
+          <mat-header-cell *matHeaderCellDef mat-sort-header style="display:flex; justify-content:center;">Severity </mat-header-cell>
+          <mat-cell *matCellDef="let defect" style="display:flex; justify-content:center;">{{defect.severity}}</mat-cell>
       </ng-container>
 
       <mat-header-row *matHeaderRowDef="displayedColumns" color="primary"></mat-header-row>
       <mat-row *matRowDef="let row; columns:displayedColumns"></mat-row>
     </mat-table>
-  <mat-paginator #paginator [pageSizeOptions]="[5, 10, 15 ]" [pageSize]="5" >
-  </mat-paginator>
+<br>
+<div class="row">
+<div class="page col-4 text-white" style=" margin-bottom: -30px; margin-left: 5px;margin-right: 5px; width: 40%;">
+<button class="mat-flat-button" (click)="FirstPage()" style="margin-left: 5px;margin-right: 5px;"><mat-icon>skip_previous</mat-icon></button>
+<button class="mat-flat-button" (click)="PrevPage()" style="margin-left: 5px;margin-right: 5px;"><mat-icon>arrow_back_ios</mat-icon></button>
+<button class="mat-flat-button" (click)="NextPage()" style="margin-left: 5px;margin-right: 5px;"><mat-icon>arrow_forward_ios</mat-icon></button>
+<button class="mat-flat-button" (click)=" LastPage()" style="margin-left: 5px;margin-right: 5px;"><mat-icon>skip_next</mat-icon></button>
+<select (change)="SelectPageSize($event)" id="pagination" name="pagination" value=20 style="margin-left: 5px;margin-right: 5px;">
+  <option value=5>5</option>
+  <option value=10>10</option>
+  <option value=15>15</option>
+  <option value=20>20</option>
+</select>
 </div>
-
-
+<!-- </mat-card> -->
+</div>
