@@ -22,6 +22,9 @@ import { BarChartComponent } from './HomePageComponents/bar-chart/bar-chart.comp
 
 import { StackedChartComponent } from './HomePageComponents/stacked-chart/stacked-chart.component';
 import { AppDetailsPageComponent } from './app-details-page/app-details-page.component';
+import { RouterActionsComponent } from './router-actions/router-actions.component';
+import { RouterAdminComponent } from './router-admin/router-admin.component';
+import { EditPopupComponent } from './edit-popup/edit-popup.component';
 
 
  @NgModule({
@@ -34,6 +37,9 @@ import { AppDetailsPageComponent } from './app-details-page/app-details-page.com
     BarChartComponent,
     StackedChartComponent,
     AppDetailsPageComponent,
+    RouterActionsComponent,
+    RouterAdminComponent,
+    EditPopupComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,6 +65,7 @@ import { AppDetailsPageComponent } from './app-details-page/app-details-page.com
     SeverityPercentTableComponent
   ],
   bootstrap: [AppComponent],
-  entryComponents: [AppDetailsPageComponent]
+  entryComponents: [AppDetailsPageComponent,
+  EditPopupComponent]
 })
 export class AppModule { }

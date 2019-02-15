@@ -13,5 +13,14 @@ export class AppComponent {
       this.NowDate = new Date();
     }, 1);
 }
+AdminURL(){
+  window.location.href = 'https://adminloggitor.herokuapp.com/#home';
+}
+ActionURL(){
+  window.location.href = 'https://loggitor-fe.herokuapp.com/home';
+}
+LogURL(){
+  window.location.href = 'https://loggitor1.herokuapp.com/src/';
+}
 }
 
