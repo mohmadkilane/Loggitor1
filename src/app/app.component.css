@@ -4,6 +4,10 @@
   left: auto;
   top: auto;
   }
+  button:focus{
+    outline:0;
+    box-shadow: none;
+  }
   ul {
     list-style-type: none;
     margin: 0;
@@ -15,8 +19,11 @@
   background: -webkit-linear-gradient(-45deg, #FFC04F 0%, #FF9921 0%, #C76BC0 100%);
   background: linear-gradient(135deg, #FFC04F 0%, #FF9921 0%, #C76BC0 100%);
 
-  /*  position: sticky;*/
-    top: 0;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 10;
+  width: 100%;
   }
   li {
     float: left;
@@ -61,11 +68,3 @@
     display: block;
   }
 
-
-  .chart1{
-    clear : none;
-    float : center;
-    position : relative;
-    width : auto;
-    height : auto;
-    }

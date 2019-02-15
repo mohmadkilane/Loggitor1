@@ -8,9 +8,11 @@ npm install chart.js --save
 
 
 ##################################################################33
-Git
+Git PUSH
 Add new Changes to the code
 Create new branch -> git checkout -b <branch Name >
 stage all changes -> git add .
 Commit            -> git commit -m "MSG"
 Push              -> git push -u origin <branch Name>
+
+Git PULL

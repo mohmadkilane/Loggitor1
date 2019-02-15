@@ -1,4 +1,4 @@
-
+<!--
  <ul>
   <li  class="dropdown">
   <a href="#home" class="btn-secondary dropdown-toggle">Home</a>
@@ -14,11 +14,11 @@
   <li style="float: right"><img src="./assets/imgs/a.png" alt="Amdocs Logo" height="50"></li>
   </ul>
   <br>
+  <div>{{NowDate | date: 'dd'}}/{{NowDate | date:'MM'}}/{{NowDate | date: 'yyyy'}} , {{NowDate | date: 'HH'}}:{{NowDate | date: 'mm'}}</div>
   <div class="container" >
-
     <div class="container">
 
-           <H2 align="center">Loggitor<span id="date2"></span></H2>
+           <H3 align="center">Amdocs System Status at date {{NowDate | date: 'dd'}}/{{NowDate | date:'MM'}}/{{NowDate | date: 'yyyy'}} </H3>
            <br><br>
     </div>
     <div class="row">
@@ -48,7 +48,7 @@
 </div>
 <table width=100%; >
   <tr>
-    <td><div><span style="text-align:center">Defects by App Pie</span><app-pie-chart></app-pie-chart></div></td>
+    <td><div align="center">Defects by App Pie<app-pie-chart></app-pie-chart></div></td>
     <td><div><span style="text-align:center">Defects by App, by Serverity</span><app-bar-chart></app-bar-chart></div></td>
 
   </tr>
@@ -66,3 +66,55 @@
 
 <input type="file" />
 
+-->
+
+
+<ul>
+ <li>
+   <a href="#about">About</a>
+ </li>
+ <li><a href="#Rules">Home</a></li>
+ <li><a href="#Solution">Logetor</a></li>
+ <li><a href="#About">Actions</a></li>
+ <li style="float: right"><img src="./assets/imgs/a.png" alt="Amdocs Logo" height="50"></li>
+</ul>
+<div style="margin-top: 5%">{{NowDate | date: 'dd'}}/{{NowDate | date:'MM'}}/{{NowDate | date: 'yyyy'}} , {{NowDate | date: 'HH'}}:{{NowDate | date: 'mm'}}</div>
+
+<br><br><br>
+<div class="container">
+  <H3 style="text-align: center">Amdocs System Status at date {{NowDate | date: 'dd'}}/{{NowDate | date:'MM'}}/{{NowDate | date: 'yyyy'}} </H3>
+
+</div>
+<br><br>
+<!--Logetor table-->
+<div class="col-8" style="margin-left: auto; margin-right: auto; border: 2px solid rgb(248, 248, 248);">
+ <app-defect-log></app-defect-log>
+</div>
+<br><br>
+
+<!--App table & Severity table-->
+<div class="row">
+ <div class="col-5" style="margin-left: auto; margin-right: auto; border: 2px solid rgb(248, 248, 248);">
+   <app-apptable></app-apptable>
+ </div>
+ <div class="col-5" style="margin-left: auto; margin-right: auto; border: 2px solid rgb(248, 248, 248);">
+   <app-severity-percent-table></app-severity-percent-table>
+ </div>
+</div>
+<br><br>
+
+<!--Charts-->
+<div class="row">
+ <!--Pie Chart-->
+ <div class="col-6">
+   <div><app-pie-chart></app-pie-chart></div>
+ </div>
+ <!--Bar Chart-->
+ <div class="col-6">
+   <div><app-bar-chart></app-bar-chart></div>
+ </div>
+</div>
+<br><br><br><br><hr style="color: white;">
+<!--Weakly Bar Chart-->
+<div class="col-12" style="width: 80%; align-content: center; height: 300px;"><app-stacked-chart></app-stacked-chart></div>
+<br><br>

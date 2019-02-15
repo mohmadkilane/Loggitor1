@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'loggetor';
+  public NowDate: Date = new Date();
+   constructor() {
+    setInterval(() => {
+      this.NowDate = new Date();
+    }, 1);
 }
+}
+
