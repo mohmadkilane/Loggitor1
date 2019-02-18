@@ -1,22 +1,22 @@
-<mat-table [dataSource]="dataSource" matSort matSortActive="severity" matSoryDirection="asc" matSortDisableClear>
+<mat-table style="background-color: #343A40; color:blanchedalmond;" [dataSource]="dataSource" matSort matSortActive="severity" matSoryDirection="asc" matSortDisableClear>
   <ng-container matColumnDef="severity">
       <div *ngIf= " getPubupPage === 'HomePage'" >
-          <mat-header-cell *matHeaderCellDef mat-sort-header>Severity</mat-header-cell>
-          <mat-cell *matCellDef="let severity" (click)="clickEvent(severity.severity)">{{severity.severity}}</mat-cell>
+          <mat-header-cell style="color:blanchedalmond;" *matHeaderCellDef mat-sort-header>Severity</mat-header-cell>
+          <mat-cell style="color:blanchedalmond;" *matCellDef="let severity" (click)="clickEvent(severity.severity)">{{severity.severity}}</mat-cell>
       </div>
       <div *ngIf=" getPubupPage === 'PopUpPage'">
-          <mat-header-cell *matHeaderCellDef mat-sort-header>Code</mat-header-cell>
-          <mat-cell *matCellDef="let severity">{{severity.errorCode}}</mat-cell>
+          <mat-header-cell style="color:blanchedalmond;" *matHeaderCellDef mat-sort-header>Code</mat-header-cell>
+          <mat-cell style="color:blanchedalmond;" *matCellDef="let severity">{{severity.errorCode}}</mat-cell>
       </div>
     </ng-container>
     <ng-container matColumnDef="defnum">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Defnum</mat-header-cell>
-      <mat-cell *matCellDef="let severity">{{severity.defnum}}</mat-cell>
+      <mat-header-cell style="color:blanchedalmond;" *matHeaderCellDef mat-sort-header>Defnum</mat-header-cell>
+      <mat-cell style="color:blanchedalmond;" *matCellDef="let severity">{{severity.defnum}}</mat-cell>
     </ng-container>
     <ng-container matColumnDef="percentage">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Percentage</mat-header-cell>
-      <mat-cell *matCellDef="let severity">{{severity.percentage}}</mat-cell>
+      <mat-header-cell style="color:blanchedalmond;" *matHeaderCellDef mat-sort-header>Percentage</mat-header-cell>
+      <mat-cell style="color:blanchedalmond;" *matCellDef="let severity">{{severity.percentage}}</mat-cell>
     </ng-container>
-    <mat-header-row *matHeaderRowDef="displayedColums" color="primary"></mat-header-row>
-    <mat-row *matRowDef="let row; columns:displayedColums"></mat-row>
+    <mat-header-row style="color:blanchedalmond;" *matHeaderRowDef="displayedColums" color="primary"></mat-header-row>
+    <mat-row style="color:blanchedalmond;" *matRowDef="let row; columns:displayedColums"></mat-row>
 </mat-table>

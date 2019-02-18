@@ -1,39 +1,32 @@
 <link href="https://unpkg.com/@angular/material/prebuilt-themes/indigo-pink.css" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-<!-- <div class="table bg-dark text-white"> -->
-<div class= "modal-body">
 
-  <div class="col-1" >
-   </div>
-  <div class="col-10" style="margin-left: 8%;">
+
+
+<div class="modal-body" style="background-color: #343A40; width:100%; height:100%;  color:blanchedalmond;">
+  <div class="col-10" style="margin-left: 8%; border:2px solid;">
     <app-defect-log></app-defect-log>
-
   </div>
-<br><br>
-<div class="row">
-<div class="col-6" >
-<app-apptable></app-apptable>
-</div>
-<div class="col-6" >
-<app-severity-percent-table></app-severity-percent-table>
-</div>
-</div>
-<br><br>
-<div class="row">
-<div class="col-6" align="center">
+  <br><br>
+  <div class="row">
+    <div class="col-6" style="border:2px solid;">
+      <app-apptable></app-apptable>
+    </div>
+    <div class="col-6" style="border:2px solid;" >
+      <app-severity-percent-table></app-severity-percent-table>
+    </div>
+  </div>
+  <br><br>
+  <table width=100%;>
+    <tr>
+      <td style="border:2px solid;"><div><app-pie-chart></app-pie-chart></div></td>
+      <td style="border:2px solid;"><div><app-bar-chart></app-bar-chart></div></td>
+    </tr>
+    <br>
+    <tr>
+      <td rowspan="2" ><br>Weekly view of Defects by App<app-stacked-chart></app-stacked-chart></td>
+    </tr>
+  </table>
 </div>
 
-</div>
-<table width=100%;>
-<tr>
-<td><div><app-pie-chart></app-pie-chart></div></td>
-<td><div><app-bar-chart></app-bar-chart></div></td>
-</tr>
-<br>
-<tr>
-    <td rowspan="2" ><br>Weekly view of Defects by App<app-stacked-chart></app-stacked-chart></td>
-  </tr>
-</table>
-</div>
-<!-- </div> -->

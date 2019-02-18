@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { Defect } from '../../models/defect.model';
 @Injectable({
@@ -10,6 +10,7 @@ export class DefectService {
  // private serviceUrl = 'https://amdocslogs.herokuapp.com/ViewDefects'; // Ahmad najar
   private serviceUrl = 'https://amdocslogfiles.herokuapp.com/ViewDefects/15/1'; // mahmoud darwesh
   private BaseUrl = 'https://amdocslogfiles.herokuapp.com/ViewDefects/';
+  // httpOptions = { headers: new HttpHeaders({'Content-Type': 'application/json'})};
   constructor(private http: HttpClient ) { }
   getDefect(page: Number , pageSize: Number ): Observable<Defect[]> {
     return this.http.get<Defect[]>(this.BaseUrl + pageSize + '/' + page);
@@ -19,4 +20,8 @@ export class DefectService {
     // this.serviceUrlCust = urlCost;
     this.serviceUrl = urlCost;
   }
+  // updateRole(row): Observable<any> {
+  //   const url = `${this.BaseUrl + 'editDefect'}/${row}`;
+  //   return this.http.put(url, row, this.httpOptions);
+  // }
 }
