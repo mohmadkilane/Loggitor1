@@ -20,6 +20,8 @@ export class SeverityPercentTableComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
   dataSource;
   displayedColums = ['severity', 'defnum' , 'percentage'];
+  severitys: Severity[];
+
   constructor(private appService: AppService,
     private severityService: SeverityService,
     private defectService: DefectService,
@@ -34,17 +36,20 @@ export class SeverityPercentTableComponent implements OnInit {
       }
       this.dataSource = new MatTableDataSource(results);
       this.dataSource.sort = this.sort;
+      this.severitys = results;
+       if (this.severitys[0].severity != null) {
+        pubupPage = 'HomePage';
+       }
     });
   }
 
 
   clickEvent( severity_: String) {
     this.apptableComponent.setMat_Header('HomePage');
-
+    pubupPage = 'PopUpPage';
     this.appService.setServiceUrlCust('https://amdocslogfiles.herokuapp.com/AppPercentSeverity/' + severity_);
     this.severityService.setServiceUrlCust('https://amdocslogfiles.herokuapp.com/SeverityPercentSeverity/' + severity_);
     this.defectService.setServiceUrlCust('https://amdocslogfiles.herokuapp.com/ViewDefectsSeverity/' + severity_ + '/15/1');
-    pubupPage = 'PopUpPage';
 
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = false;

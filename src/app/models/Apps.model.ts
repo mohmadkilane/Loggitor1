@@ -3,4 +3,7 @@ export interface AppModel {
   errorCode: String;
   defnum: number ;
   percentage: String ;
+  critical: number;
+  error: number;
+  warning: number;
 }
