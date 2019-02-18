@@ -1,11 +1,13 @@
+import { Defect } from './../../models/defect.model';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort, MatSortable , MatTableDataSource , MatPaginator
-   , MatButton, MatIcon} from '@angular/material';
+   , MatButton, MatIcon, TOOLTIP_PANEL_CLASS} from '@angular/material';
 import {DefectService } from '../../Services/Defect/defect.service' ;
 import { PageEvent, MatDialog } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EditPopupComponent } from './../../edit-popup/edit-popup.component';
 import { MatDialogConfig} from '@angular/material/dialog';
+import { balancePreviousStylesIntoKeyframes } from '@angular/animations/browser/src/util';
 
 @Component({
   selector: 'app-defect-log',
@@ -17,7 +19,7 @@ export class DefectLogComponent implements OnInit {
   // @ViewChild(MatPaginator) paginator: MatPaginator;
   private page: any = 1 ;
   dataSource ;
-  displayedColumns = ['SeqId', 'App', 'Code', 'Severity','Edit'];
+  displayedColumns = ['SeqId', 'App', 'Code', 'Severity', 'Edit'];
   pageSize = 5;
  // LastPageIndex = 1 ;
   // setPageSizeOptions(setPageSizeOptionsInput: string) {
@@ -47,11 +49,11 @@ getDefect() {
 
 NextPage() {
   this.page++ ;
-  this.defectService.getDefect(this.page , this.pageSize).subscribe(data =>{
+  this.defectService.getDefect(this.page , this.pageSize).subscribe(data => {
     if (!data) {
       return;
     }
-    if(data.length === 0) {
+    if (data.length === 0) {
       this.page-- ;
     } else {
     console.log(this.page);
@@ -62,7 +64,7 @@ NextPage() {
   });
 }
   PrevPage() {
-    if(this.page !== 0 ){
+    if (this.page !== 0 ) {
         this.page-- ;
         this.defectService.getDefect(this.page , this.pageSize).subscribe(data => {
           if (!data) {
@@ -75,7 +77,7 @@ NextPage() {
     }
   }
   FirstPage() {
-    if(this.page !== 0 ){
+    if (this.page !== 0 ) {
         this.page = 1 ;
         this.defectService.getDefect(this.page , this.pageSize).subscribe(data => {
           if (!data) {
@@ -90,7 +92,7 @@ NextPage() {
   LastPage() {
 
         this.defectService.getDefect(this.page , this.pageSize).subscribe(data => {
-          if(data.length === 0) {
+          if (data.length === 0) {
             this.page-- ;
             console.log(this.page);
             this.defectService.getDefect(this.page, this.pageSize).subscribe(data1 => {
@@ -109,7 +111,7 @@ NextPage() {
     });
 }
   SelectPageSize(event: any) {
-   this.pageSize = event.target.value;;
+   this.pageSize = event.target.value;
     console.log(this.pageSize);
 
     this.defectService.getDefect(this.page , this.pageSize).subscribe(data => {

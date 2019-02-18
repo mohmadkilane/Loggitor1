@@ -1,43 +1,55 @@
- <div style=" align-content: center;">
-    <!-- <mat-card class="text-white bg-dark "> -->
-  <mat-table [dataSource]= "dataSource"  matSort  >
-      <ng-container matColumnDef="SeqId">
-        <mat-header-cell *matHeaderCellDef style="display:flex; justify-content:center;" >SeqID </mat-header-cell>
-        <mat-cell *matCellDef="let defect" style="display:flex; justify-content:center;">{{defect.seqid}}</mat-cell>
-      </ng-container>
-      <ng-container matColumnDef="App">
-          <mat-header-cell *matHeaderCellDef mat-sort-header style="display:flex; justify-content:center;">App </mat-header-cell>
-          <mat-cell *matCellDef="let defect" style="display:flex; justify-content:center;">{{defect.appName+" "+ defect.appType }}</mat-cell>
-      </ng-container>
-      <ng-container matColumnDef="Code">
-          <mat-header-cell *matHeaderCellDef mat-sort-header style="display:flex; justify-content:center;">Code </mat-header-cell>
-          <mat-cell *matCellDef="let defect" style="display:flex; justify-content:center;">{{defect.defCode}}</mat-cell>
-      </ng-container>
-      <ng-container matColumnDef="Severity">
-          <mat-header-cell *matHeaderCellDef mat-sort-header style="display:flex; justify-content:center;">Severity </mat-header-cell>
-          <mat-cell *matCellDef="let defect" style="display:flex; justify-content:center;">{{defect.severity}}</mat-cell>
-      </ng-container>
-      <ng-container matColumnDef="Edit">
-        <mat-header-cell *matHeaderCellDef mat-sort-header style="display:flex; justify-content:center;">Edit </mat-header-cell>
-        <mat-cell *matCellDef="let defect" style="display:flex; justify-content:center; "><img (click)="clickEvent()" src='https://www.clipartmax.com/png/middle/231-2319865_register-button-png-icon-edit-png.png' width=20px height=20px></mat-cell>
+ <div >
+  <mat-table style="background-color: #343A40; color:blanchedalmond; " [dataSource]= "dataSource"  matSort  >
+    <ng-container matColumnDef="SeqId">
+      <mat-header-cell *matHeaderCellDef style="display:flex; justify-content:center; color:blanchedalmond;" >SeqID </mat-header-cell>
+      <mat-cell *matCellDef="let defect" style="display:flex; justify-content:center; color:blanchedalmond;">{{defect.seqid}}</mat-cell>
     </ng-container>
 
-      <mat-header-row *matHeaderRowDef="displayedColumns" color="primary"></mat-header-row>
-      <mat-row *matRowDef="let row; columns:displayedColumns"></mat-row>
-    </mat-table>
-<br>
-<div class="row">
-<div class="page col-4 text-white" style=" margin-bottom: 0px; margin-left: 5px;margin-right: 5px; width: 50%;">
-<button (click)="FirstPage()" style="margin-left: 5px;margin-right: 5px; color:white; background-color:transparent; border-style: none;"><mat-icon>skip_previous</mat-icon></button>
-<button (click)="PrevPage()" style="margin-left: 5px;margin-right: 5px; color:white; background-color:transparent; border-style: none;"><mat-icon>arrow_back_ios</mat-icon></button>
-<button (click)="NextPage()" style="margin-left: 5px;margin-right: 5px; color:white; background-color:transparent; border-style: none;"><mat-icon>arrow_forward_ios</mat-icon></button>
-<button (click)=" LastPage()" style="margin-left: 5px;margin-right: 5px; color:white; background-color:transparent; border-style: none;"><mat-icon>skip_next</mat-icon></button>
-<select (change)="SelectPageSize($event)" id="pagination" name="pagination" value=20 style="margin-left: 5px;margin-right: 5px; color:white; background-color:transparent; border-style: none;">
-  <option style="color:black;" value=5>5</option>
-  <option style="color:black;" value=10>10</option>
-  <option style="color:black;" value=15>15</option>
-  <option style="color:black;" value=20>20</option>
-</select>
+    <ng-container matColumnDef="App">
+      <mat-header-cell *matHeaderCellDef mat-sort-header style="display:flex; justify-content:center; color:blanchedalmond;">App </mat-header-cell>
+      <mat-cell *matCellDef="let defect" style="display:flex; justify-content:center; color:blanchedalmond;">{{defect.appName+" "+ defect.appType }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Code">
+      <mat-header-cell *matHeaderCellDef mat-sort-header style="display:flex; justify-content:center; color:blanchedalmond;">Code </mat-header-cell>
+      <mat-cell *matCellDef="let defect" style="display:flex; justify-content:center; color:blanchedalmond;">{{defect.defCode}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Severity">
+      <mat-header-cell *matHeaderCellDef mat-sort-header style="display:flex; justify-content:center; color:blanchedalmond;">Severity </mat-header-cell>
+      <mat-cell *matCellDef="let defect" style="display:flex; justify-content:center; color:blanchedalmond;">{{defect.severity}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Edit">
+      <mat-header-cell *matHeaderCellDef mat-sort-header style="display:flex; justify-content:center; color:blanchedalmond;">Edit </mat-header-cell>
+      <mat-cell *matCellDef="let defect" style="display:flex; justify-content:center; color:blanchedalmond; "><img (click)="clickEvent(defect)" src='https://www.clipartmax.com/png/middle/231-2319865_register-button-png-icon-edit-png.png' width=20px height=20px></mat-cell>
+    </ng-container>
+
+    <!-- <ng-container matColumnDef="Edit">
+     <mat-header-cell *matHeaderCellDef></mat-header-cell>
+     <mat-cell *matCellDef="let row">
+       <button mat-icon-button (click)="clickEvent(row)">Edit</button>
+     </mat-cell>
+   </ng-container>-->
+
+    <mat-header-row *matHeaderRowDef="displayedColumns" color="primary"></mat-header-row>
+    <mat-row *matRowDef="let row; columns:displayedColumns"></mat-row>
+  </mat-table>
+  <br>
+  <div class="row">
+    <div class="page col-4 text-white" style=" margin-bottom: -20px; background-color: #343A40; margin-left: 5px;margin-right: 5px; width: 50%;">
+      <button (click)="FirstPage()" style="margin-left: 5px;margin-right: 5px; color:white; background-color:transparent; border-style: none;"><mat-icon>skip_previous</mat-icon></button>
+      <button (click)="PrevPage()" style="margin-left: 5px;margin-right: 5px; color:white; background-color:transparent; border-style: none;"><mat-icon>arrow_back_ios</mat-icon></button>
+      <button (click)="NextPage()" style="margin-left: 5px;margin-right: 5px; color:white; background-color:transparent; border-style: none;"><mat-icon>arrow_forward_ios</mat-icon></button>
+      <button (click)=" LastPage()" style="margin-left: 5px;margin-right: 5px; color:white; background-color:transparent; border-style: none;"><mat-icon>skip_next</mat-icon></button>
+      <select (change)="SelectPageSize($event)" id="pagination" name="pagination" value=20 style="margin-left: 5px;margin-right: 5px; color:white; background-color: #343A40; border-style: none;">
+        <option style="color:black;" value=5>5</option>
+        <option style="color:black;" value=10>10</option>
+        <option style="color:black;" value=15>15</option>
+        <option style="color:black;" value=20>20</option>
+      </select>
+    </div>
+  </div>
 </div>
-<!-- </mat-card> -->
+
 
