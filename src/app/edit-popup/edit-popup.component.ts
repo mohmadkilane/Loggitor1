@@ -26,13 +26,13 @@ export class EditPopupComponent implements OnInit {
   keyValue: Map<any, any>;
   constructor( public dialog: MatDialog,
     @Inject (MAT_DIALOG_DATA) data) {
-     this.keyValue = data;
-     this.appName = this.keyValue['appName'] + ['  '] + this.keyValue['appType'];
-     this.description = this.keyValue['description'];
-     this.solution = this.keyValue['solname'];
-      this.severity = this.keyValue['severity'];
-      this.IDid = this.keyValue['idid'];
-      this.toDo = this.keyValue['ido'];
+    this.keyValue = data;
+    this.appName = this.keyValue['appName'] + ['  '] + this.keyValue['appType'];
+    this.description = this.keyValue['description'];
+    this.solution = this.keyValue['solname'];
+    this.severity = this.keyValue['severity'];
+    this.IDid = this.keyValue['idid'];
+    this.toDo = this.keyValue['ido'];
      }
 
   ngOnInit() {
