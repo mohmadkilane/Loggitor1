@@ -7,20 +7,29 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'loggetor';
+  router = '';
+  idParam;
   public NowDate: Date = new Date();
    constructor() {
     setInterval(() => {
       this.NowDate = new Date();
     }, 1);
+
+    this.router = window.location.pathname;
+    this.idParam = this.router.split('/')[3];
+    console.log(this.idParam);
+}
+getID() {
+  return this.idParam;
 }
 AdminURL() {
-  window.location.href = 'https://adminloggitor.herokuapp.com/#home';
+  window.location.href = 'https://adminloggitor.herokuapp.com/#home/' + this.idParam;
 }
 ActionURL() {
-  window.location.href = 'https://loggitor-fe.herokuapp.com/home';
+  window.location.href = 'https://loggitor-fe.herokuapp.com/home/' + this.idParam;
 }
 LogURL() {
-  window.location.href = 'https://loggitor1.herokuapp.com/src/';
+  window.location.href = 'https://loggitor1.herokuapp.com/src/loggitor/' + this.idParam;
 }
 }
 

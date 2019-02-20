@@ -21,8 +21,8 @@
     </ng-container>
 
     <ng-container matColumnDef="Edit">
-      <mat-header-cell *matHeaderCellDef mat-sort-header style="display:flex; justify-content:center; color:blanchedalmond;">Edit </mat-header-cell>
-      <mat-cell *matCellDef="let defect" style="display:flex; justify-content:center; color:blanchedalmond; "><img (click)="clickEvent(defect)" src='https://www.clipartmax.com/png/middle/231-2319865_register-button-png-icon-edit-png.png' width=20px height=20px></mat-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header style="display:flex; justify-content:center; color:blanchedalmond;"> </mat-header-cell>
+      <mat-cell *matCellDef="let defect" style="display:flex; justify-content:center; color:blanchedalmond; "><span  *ngIf="PermissionCHecked"><img (click)="clickEvent(defect)" src='https://www.clipartmax.com/png/middle/231-2319865_register-button-png-icon-edit-png.png' width=20px height=20px></span></mat-cell>
     </ng-container>
 
     <!-- <ng-container matColumnDef="Edit">
