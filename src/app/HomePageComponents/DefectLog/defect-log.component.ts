@@ -1,3 +1,4 @@
+import { element, by } from 'protractor';
 import { Defect } from './../../models/defect.model';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort, MatSortable , MatTableDataSource , MatPaginator
@@ -8,6 +9,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EditPopupComponent } from './../../edit-popup/edit-popup.component';
 import { MatDialogConfig} from '@angular/material/dialog';
 import { balancePreviousStylesIntoKeyframes } from '@angular/animations/browser/src/util';
+import { reduce } from 'rxjs/operators';
 
 @Component({
   selector: 'app-defect-log',
@@ -123,11 +125,12 @@ NextPage() {
   //    this.dataSource.paginator = this.paginator;
     });
   }
-  clickEvent() {
-    const dialogConfig = new MatDialogConfig();
+  clickEvent(row) {
+    const dialogConfig =  new MatDialogConfig();
     dialogConfig.disableClose = false;
     dialogConfig.autoFocus = true;
     dialogConfig.width = '90%';
+    dialogConfig.data = row;
     this.dialog.open(EditPopupComponent, dialogConfig);
   }
 }

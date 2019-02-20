@@ -1,7 +1,7 @@
+import { Defect } from './../../models/defect.model';
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
-import { Defect } from '../../models/defect.model';
 @Injectable({
   providedIn: 'root'
 })
@@ -24,4 +24,14 @@ export class DefectService {
   //   const url = `${this.BaseUrl + 'editDefect'}/${row}`;
   //   return this.http.put(url, row, this.httpOptions);
   // }
+  populateForm(row) {
+
+  row.set({
+      SeqId: row.seqID,
+      name: row.appName,
+      type: row.appType,
+      code: row.defCode,
+      severity: row.severity
+    });
+  }
 }
