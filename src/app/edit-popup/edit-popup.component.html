@@ -1,21 +1,42 @@
 <link href="https://unpkg.com/@angular/material/prebuilt-themes/indigo-pink.css" rel="stylesheet" style="background-color: #343A40;">
-<div >
-  <form style="width: 80%; border: 2px solid;" name="form" id="form" >
+<div class="modal-body">
+  <form  style="width: 100%; border: 2px solid;" name="form" id="form" >
 
-    <label for="AppName" style="width: 40%">App Name</label>
-    <input style="width: 40%" disabled="true" type="text" name="label1" id="label1" value={{appName}} style="width: 40%; color:black;"><br>
+    <label for="AppName" style="width: 40%; margin-left:8%;">App Name</label>
+    <input style="width: 40%; margin-left:8%;" disabled="true" type="text" name="label1" id="label1" value={{appName}} style="width: 40%; color:black;"><br>
 
-    <label style="width: 40%" for="Severity" >Severity</label>
-    <input style="width: 40%" disabled="true" type="text" name="label2" id="label2" value={{severity}} style="width: 40%; color:black;"><br>
+    <label style="width: 40%; margin-left:8%;" for="Severity" >Severity</label>
+    <input style="width: 40%; margin-left:8%;" disabled="true" type="text" name="label2" id="label2" value={{severity}} style="width: 40%; color:black;"><br>
 
-    <label style="width: 40%" for="Description" >Description</label>
-    <input style="width: 40%" disabled="true" type="text" name="label2" id="label2" value={{description}} style="width: 40%; color:black;"><br>
+    <label style="width: 40%; margin-left:8%;" for="Description" >Description</label>
+    <input style="width: 40%; margin-left:8%;" disabled="true" type="text" name="label3" id="label3" value={{description}} style="width: 40%; color:black;"><br>
 
-    <label style="width: 40%" for="Solution" >Solution</label>
-    <input style="width: 40%" disabled="true" type="text" name="label2" id="label2" value={{solution}} style="width: 40%; color:black;"><br>
+    <label style="width: 40%; margin-left:8%;" for="Solution" >Solution</label>
+    <input style="width: 40%; margin-left:8%;" disabled="true" type="text" name="label4" id="label4" value={{solution}} style="width: 40%; color:black;"><br>
+    <!-- <div class='row'></div>
+    <label style="width: 250px; height: 250px; border: 2px solid;" for="IDid" ></label>
+    <input style="width: 250px; height: 250px; border: 2px solid;" disabled="true" type="text" name="label5" id="label5" value={{IDid}} style="width: 40%; color:black;"><br> --><br><br>
 
-    <label style="width: 40%" for="IDid" >I Did</label>
-    <input style="width: 40%" disabled="true" type="text" name="label2" id="label2" value={{IDid}} style="width: 40%; color:black;"><br>
+    <table style="margin-left:8%;">
+      <th>What i did</th><th><th></th>
+      <tr>
+        <td style="width: 250px; height: 250px; border: 2px solid;"></td>
+        <td><button mat-icon-button>>></button></td>
+        <td style="width: 250px; height: 250px; border: 2px solid;"></td>
+      </tr>
+    </table>
+    <br><br>
+    <table style="margin-left:8%;">
+      <th>What to do next</th><th><th></th>
+      <tr>
+        <td style="width: 250px; height: 250px; border: 2px solid;"></td>
+        <td><button mat-icon-button>>></button></td>
+        <td style="width: 250px; height: 250px; border: 2px solid;"></td>
+      </tr>
+    </table>
+    <br><br>
+    <button mat-icon-button style="margin-left:20%;">Save</button>
+    <button mat-icon-button style="margin-left:20%;">Cancel</button>
 </form>
 </div>
     <!-- <label for="app" style="width: 40%;">App :</label>
