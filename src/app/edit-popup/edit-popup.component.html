@@ -1,14 +1,49 @@
 <link href="https://unpkg.com/@angular/material/prebuilt-themes/indigo-pink.css" rel="stylesheet" style="background-color: #343A40;">
-<div style="background-color: #343A40; width:100%; height:100%;  color:blanchedalmond;">
-  <form style="width: 80%;">
-    <label for="app" style="width: 40%;">App :</label>
-    <input type="text" name="App" id="App" value="BLM-Cust" style="width: 40%;"><br>
+<div class="modal-body">
+  <form  style="width: 100%; border: 2px solid;" name="form" id="form" >
 
-    <label for="NumOfDeff" style="width: 40%;">Number of Defects :</label>
-    <input type="number" name="App" id="App" value="12" style="width: 40%;"><br>
+    <label for="AppName" style="width: 40%; margin-left:8%;">App Name</label>
+    <input style="width: 40%; margin-left:8%;" disabled="true" type="text" name="label1" id="label1" value={{appName}} style="width: 40%; color:black;"><br>
+
+    <label style="width: 40%; margin-left:8%;" for="Severity" >Severity</label>
+    <input style="width: 40%; margin-left:8%;" disabled="true" type="text" name="label2" id="label2" value={{severity}} style="width: 40%; color:black;"><br>
+
+    <label style="width: 40%; margin-left:8%;" for="Description" >Description</label>
+    <input style="width: 40%; margin-left:8%;" disabled="true" type="text" name="label3" id="label3" value={{description}} style="width: 40%; color:black;"><br>
+
+    <label style="width: 40%; margin-left:8%;" for="Solution" >Solution</label>
+    <input style="width: 40%; margin-left:8%;" disabled="true" type="text" name="label4" id="label4" value={{solution}} style="width: 40%; color:black;"><br>
+    <!-- <div class='row'></div>
+    <label style="width: 250px; height: 250px; border: 2px solid;" for="IDid" ></label>
+    <input style="width: 250px; height: 250px; border: 2px solid;" disabled="true" type="text" name="label5" id="label5" value={{IDid}} style="width: 40%; color:black;"><br> --><br><br>
+
+    <table style="margin-left:8%;">
+      <th>What i did</th><th><th></th>
+      <tr>
+        <td style="width: 250px; height: 250px; border: 2px solid;"></td>
+        <td><button mat-icon-button>>></button></td>
+        <td style="width: 250px; height: 250px; border: 2px solid;"></td>
+      </tr>
+    </table>
+    <br><br>
+    <table style="margin-left:8%;">
+      <th>What to do next</th><th><th></th>
+      <tr>
+        <td style="width: 250px; height: 250px; border: 2px solid;"></td>
+        <td><button mat-icon-button>>></button></td>
+        <td style="width: 250px; height: 250px; border: 2px solid;"></td>
+      </tr>
+    </table>
+    <br><br>
+    <button mat-icon-button style="margin-left:20%;">Save</button>
+    <button mat-icon-button style="margin-left:20%;">Cancel</button>
+</form>
+</div>
+    <!-- <label for="app" style="width: 40%;">App :</label>
+
 
     <label for="Discription" style="width: 40%;">Discription :</label>
-    <input type="text" name="App" id="App" value="Cann't open the App" style="width: 40%;"><br>
+     <input type="text" name="App" id="App" value="Cann't open the App" style="width: 40%;"><br>
 
     <label for="Solution" style="width: 40%;">Solution :</label>
     <input type="text" name="App" id="App" value="Reset App" style="width: 40%;"><br>
@@ -28,4 +63,22 @@
     <td></td>
   </tr>
 </table>
-</div>
+</div> -->
+
+<!-- <h2 mat-dialog-title>{{description}}</h2>
+
+<mat-dialog-content [formGroup]="form">
+
+    <mat-form-field>
+        <input matInput
+                placeholder="Course Description"
+               formControlName="description">
+    </mat-form-field>
+      ....
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="mat-raised-button"(click)="close()">Close</button>
+    <button class="mat-raised-button mat-primary"(click)="save()">Save</button>
+</mat-dialog-actions> -->

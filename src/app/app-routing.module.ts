@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
  { path: 'loggitor', component: AppComponent},
+ { path: 'loggitor/:id', component: AppComponent},
  { path: 'actions', component: RouterActionsComponent},
  { path: 'admin', component: RouterAdminComponent }];
 @NgModule({

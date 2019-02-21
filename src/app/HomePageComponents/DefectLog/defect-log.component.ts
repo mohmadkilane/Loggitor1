@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+
+=======
+import { element, by } from 'protractor';
+>>>>>>> fe77dd23611af4daae3f4ace39d3c393587a1258
 import { Defect } from './../../models/defect.model';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort, MatSortable , MatTableDataSource , MatPaginator
@@ -8,6 +13,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { EditPopupComponent } from './../../edit-popup/edit-popup.component';
 import { MatDialogConfig} from '@angular/material/dialog';
 import { balancePreviousStylesIntoKeyframes } from '@angular/animations/browser/src/util';
+
+import { AppComponent } from 'src/app/app.component';
+
+import { reduce } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-defect-log',
@@ -21,16 +31,19 @@ export class DefectLogComponent implements OnInit {
   dataSource ;
   displayedColumns = ['SeqId', 'App', 'Code', 'Severity', 'Edit'];
   pageSize = 5;
+  PermissionCHecked = true;
  // LastPageIndex = 1 ;
   // setPageSizeOptions(setPageSizeOptionsInput: string) {
   //   this.pageSizeOptions = setPageSizeOptionsInput.split(',').map(str => +str);
   // }
   constructor(private defectService: DefectService,
-    private dialog: MatDialog  ) {}
+    private dialog: MatDialog ,
+    private mainTable: AppComponent ) {}
 
   ngOnInit() {
     this.getDefect();
-
+    console.log('ID', this.mainTable.getID());
+   // this.PermissionCHecked = true;
   }
 
 getDefect() {
@@ -123,11 +136,12 @@ NextPage() {
   //    this.dataSource.paginator = this.paginator;
     });
   }
-  clickEvent() {
-    const dialogConfig = new MatDialogConfig();
+  clickEvent(row) {
+    const dialogConfig =  new MatDialogConfig();
     dialogConfig.disableClose = false;
     dialogConfig.autoFocus = true;
     dialogConfig.width = '90%';
+    dialogConfig.data = row;
     this.dialog.open(EditPopupComponent, dialogConfig);
   }
 }
