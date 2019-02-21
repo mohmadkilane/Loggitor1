@@ -1,12 +1,11 @@
 
 <div style="background-color: #343A40; width:100%; color:blanchedalmond;">
 <ul>
- <li>
-   <a href="#about">About</a>
- </li>
- <li><a (click)="LogURL()" style="cursor: pointer;">Home</a></li>
- <li><a (click)="AdminURL()" style="cursor: pointer;">Admin</a></li>
+
+ <li><a style="cursor: pointer;" href="https://loggitor1.herokuapp.com/src/">Loggitor</a></li>
  <li><a (click)="ActionURL()" style="cursor: pointer;">Actions</a></li>
+ <li><a href="https://admin-users.herokuapp.com/users">Admin</a></li>
+ <li><a href="https://loggitor-fe.herokuapp.com/about">About</a></li>
  <li style="float: right"><img src="./assets/imgs/a.png" alt="Amdocs Logo" height="50"></li>
 </ul>
 <div style="margin-top: 5%">{{NowDate | date: 'dd'}}/{{NowDate | date:'MM'}}/{{NowDate | date: 'yyyy'}} , {{NowDate | date: 'HH'}}:{{NowDate | date: 'mm'}}</div>
@@ -47,6 +46,8 @@
 </div>
 <br><br><br><br><hr style="color: white;">
 <!--Weakly Bar Chart-->
-<div class="col-12" style="width: 80%; align-content: center; height: 300px;"><app-stacked-chart></app-stacked-chart></div>
+<div class="col-12" style="width: 80%; align-content: center; height: 300px;">
+  <!-- <app-weekly></app-weekly> -->
+  <app-stacked-chart></app-stacked-chart>></div>
 <br><br>
 </div>

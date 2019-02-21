@@ -62,7 +62,7 @@ import { EditPopupComponent } from './edit-popup/edit-popup.component';
     SeverityService,
     PieChartComponent,
     ApptableComponent,
-    SeverityPercentTableComponent
+    SeverityPercentTableComponent,
   ],
   bootstrap: [AppComponent],
   entryComponents: [AppDetailsPageComponent,

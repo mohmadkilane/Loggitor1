@@ -46,7 +46,7 @@ export class ApptableComponent implements OnInit {
     // SeverityPercentTableComponent.setPubUpPage('HomePage');
     this.appService.setServiceUrlCust('https://amdocslogfiles.herokuapp.com/AppPercentApp/' + appName);
     this.severityService.setServiceUrlCust('https://amdocslogfiles.herokuapp.com/SeverityPercentApp/' + appName);
-    this.defectService.setServiceUrlCust('https://amdocslogfiles.herokuapp.com/ViewDefectsApp/' + appName + '/5/1');
+    this.defectService.setServiceUrlCust('https://amdocslogfiles.herokuapp.com/ViewDefectsApp/' + appName + '/');
     // this. 'https://amdocslogfiles.herokuapp.com/AppPercentSeverity/Error';
     mat_header = 'ErrorCode';
 
