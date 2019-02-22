@@ -25,6 +25,7 @@ import { AppDetailsPageComponent } from './app-details-page/app-details-page.com
 import { RouterActionsComponent } from './router-actions/router-actions.component';
 import { RouterAdminComponent } from './router-admin/router-admin.component';
 import { EditPopupComponent } from './edit-popup/edit-popup.component';
+import { WeeklyComponent } from './HomePageComponents/weekly/weekly.component';
 
 
  @NgModule({
@@ -40,6 +41,7 @@ import { EditPopupComponent } from './edit-popup/edit-popup.component';
     RouterActionsComponent,
     RouterAdminComponent,
     EditPopupComponent,
+    WeeklyComponent
   ],
   imports: [
     BrowserModule,
