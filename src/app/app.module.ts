@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http' ;
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations' ;
 import {MatTableModule, MatSortModule, MatPaginatorModule, MatDialogModule,
-   MatButtonModule , MatCardModule, MatIconModule, MatDialogRef } from '@angular/material';
+   MatButtonModule , MatCardModule, MatIconModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { ChartsModule } from 'ng2-charts';
 // Imports Of services
@@ -54,8 +54,7 @@ import { EditPopupComponent } from './edit-popup/edit-popup.component';
     MatDialogModule,
     MatButtonModule,
     MatCardModule,
-    MatIconModule,
-    MatDialogModule,
+    MatIconModule
   ],
   providers: [
     DefectService,
@@ -63,7 +62,7 @@ import { EditPopupComponent } from './edit-popup/edit-popup.component';
     SeverityService,
     PieChartComponent,
     ApptableComponent,
-    SeverityPercentTableComponent
+    SeverityPercentTableComponent,
   ],
   bootstrap: [AppComponent],
   entryComponents: [AppDetailsPageComponent,

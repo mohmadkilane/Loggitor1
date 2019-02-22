@@ -14,10 +14,10 @@ export class AppComponent {
     }, 1);
 }
 AdminURL() {
-  window.location.href = 'https://adminloggitor.herokuapp.com/#home';
+  window.location.href = 'https://loggitor-fe.herokuapp.com/home';
 }
 ActionURL() {
-  window.location.href = 'https://loggitor-fe.herokuapp.com/home';
+  window.location.href = 'https://loggitor-fe.herokuapp.com/home/2';
 }
 LogURL() {
   window.location.href = 'https://loggitor1.herokuapp.com/src/';

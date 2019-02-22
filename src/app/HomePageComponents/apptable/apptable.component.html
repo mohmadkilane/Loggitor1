@@ -3,7 +3,7 @@
 
       <div *ngIf= " getMat_header === 'HomePage'" >
           <mat-header-cell *matHeaderCellDef mat-sort-header style="color:blanchedalmond;">App Name</mat-header-cell>
-          <mat-cell *matCellDef="let AppModel" (click)="clickEvent(AppModel.name)" style="color:blanchedalmond;">{{AppModel.name}}</mat-cell>
+          <mat-cell class="hov" *matCellDef="let AppModel" (click)="clickEvent(AppModel.name)" style="color:blanchedalmond; cursor: pointer;">{{AppModel.name}}</mat-cell>
       </div>
       <div *ngIf=" getMat_header === 'ErrorCode'">
           <mat-header-cell *matHeaderCellDef mat-sort-header style="color:blanchedalmond;">Error Code</mat-header-cell>

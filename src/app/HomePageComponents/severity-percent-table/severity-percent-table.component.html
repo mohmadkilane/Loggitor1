@@ -2,7 +2,7 @@
   <ng-container matColumnDef="severity">
       <div *ngIf= " getPubupPage === 'HomePage'" >
           <mat-header-cell style="color:blanchedalmond;" *matHeaderCellDef mat-sort-header>Severity</mat-header-cell>
-          <mat-cell style="color:blanchedalmond;" *matCellDef="let severity" (click)="clickEvent(severity.severity)">{{severity.severity}}</mat-cell>
+          <mat-cell class="hov" style="color:blanchedalmond; cursor: pointer;" *matCellDef="let severity" (click)="clickEvent(severity.severity)">{{severity.severity}}</mat-cell>
       </div>
       <div *ngIf=" getPubupPage === 'PopUpPage'">
           <mat-header-cell style="color:blanchedalmond;" *matHeaderCellDef mat-sort-header>Code</mat-header-cell>

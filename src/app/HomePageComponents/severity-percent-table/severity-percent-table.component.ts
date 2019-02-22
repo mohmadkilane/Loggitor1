@@ -49,7 +49,7 @@ export class SeverityPercentTableComponent implements OnInit {
     pubupPage = 'PopUpPage';
     this.appService.setServiceUrlCust('https://amdocslogfiles.herokuapp.com/AppPercentSeverity/' + severity_);
     this.severityService.setServiceUrlCust('https://amdocslogfiles.herokuapp.com/SeverityPercentSeverity/' + severity_);
-    this.defectService.setServiceUrlCust('https://amdocslogfiles.herokuapp.com/ViewDefectsSeverity/' + severity_ + '/15/1');
+    this.defectService.setServiceUrlCust('https://amdocslogfiles.herokuapp.com/ViewDefectsSeverity/' + severity_ + '/') ;
 
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = false;
