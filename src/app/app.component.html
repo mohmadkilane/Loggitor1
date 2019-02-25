@@ -1,16 +1,57 @@
 
+<mat-sidenav-container class="example-container" style="background-color: transparent;">
+</mat-sidenav-container>
+<div class="ex " (click)="close();closeNav();" id="mySidenav">
+<mat-sidenav #sidenav  (keydown.escape)="close(); closeNav();" disableClose class="text-white bg-dark">
+    <a class="btn-dialog-close overlay" mat-stroked-button (click)="close(); closeNav();" tabIndex="-1"><mat-icon>clear</mat-icon></a>
+ <p> <button type="button" class="btn" style="padding: 12px 16px;" routerLink="/home" (click)="refreshHref()"> Home</button></p>
+</mat-sidenav>
+</div>
+
+<div class="ul" id="main2">
+      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+  <i class="material-icons" style="background-color: transparent;">
+      <button mat-button (click)="sidenav.open();openNav();" style="background-color: transparent; color:white;"><mat-icon>menu</mat-icon></button>
+ </i>
+    </div>
+
+    <span><button class="btn" (click)="LoggitorURL();"><span>Loggitor</span></button></span>
+    <span><button class="btn" (click)="ActionURL();"><span>Action</span></button></span>
+    <span><button class="btn"(click)="AdminURL();"><span>Admin</span></button></span>
+    <span><button class="btn" routerLink="about" (click)="refreshHref();"><span>About</span></button></span>
+    <li style="float: right"><img src="./assets/imgs/a.png" alt="Amdocs Logo" height="35px"></li>
+</div><br>
+
+
+  <br><br>
+  <div class="container"  id="main">
+
+
+
+
+
+
+
+
+
+
+
 <div style="background-color: #343A40; width:100%; color:blanchedalmond;">
-<ul>
+  <!-- <ul  style="font-family: 'Righteous', cursive; text-shadow: 1px 1px 0 black;">
+    <li><div class="hamburger"></div>
+      <div class="hamburger"></div>
+      <div class="hamburger"></div>
+    </li>
 
- <li><a style="cursor: pointer;" href="https://loggitor1.herokuapp.com/src/">Loggitor</a></li>
- <li><a (click)="ActionURL()" style="cursor: pointer;">Actions</a></li>
- <li><a href="https://admin-users.herokuapp.com/users">Admin</a></li>
- <li><a href="https://loggitor-fe.herokuapp.com/about">About</a></li>
- <li style="float: right"><img src="./assets/imgs/a.png" alt="Amdocs Logo" height="50"></li>
-</ul>
-<div style="margin-top: 5%">{{NowDate | date: 'dd'}}/{{NowDate | date:'MM'}}/{{NowDate | date: 'yyyy'}} , {{NowDate | date: 'HH'}}:{{NowDate | date: 'mm'}}</div>
+    <li><a style="cursor: pointer;" href="https://loggitor1.herokuapp.com/src/">Loggitor</a></li>
+    <li><a (click)="ActionURL()" style="cursor: pointer;">Actions</a></li>
+    <li><a href="https://admin-users.herokuapp.com/users">Admin</a></li>
+    <li><a href="https://loggitor-fe.herokuapp.com/about">About</a></li>
+    <li style="float: right"><img src="./assets/imgs/a.png" alt="Amdocs Logo" height="50"></li>
+  </ul> -->
+<div style="margin-top: 0%; margin-left: 3px;">{{NowDate | date: 'dd'}}/{{NowDate | date:'MM'}}/{{NowDate | date: 'yyyy'}} , {{NowDate | date: 'HH'}}:{{NowDate | date: 'mm'}}</div>
 
-<br><br><br>
+<br>
 <div class="container">
   <H3 style="text-align: center">Amdocs System Status at date {{NowDate | date: 'dd'}}/{{NowDate | date:'MM'}}/{{NowDate | date: 'yyyy'}} </H3>
 

@@ -27,6 +27,9 @@ import { RouterAdminComponent } from './router-admin/router-admin.component';
 import { EditPopupComponent } from './edit-popup/edit-popup.component';
 import { WeeklyComponent } from './HomePageComponents/weekly/weekly.component';
 
+import { MatSnackBarModule, MatGridListModule, MatFormFieldModule,
+  MatRadioModule, MatInputModule, MatSelectModule, MatToolbarModule, MatSidenavModule, MatStepperModule} from '@angular/material';
+import {ReactiveFormsModule } from '@angular/forms';
 
  @NgModule({
   declarations: [
@@ -56,7 +59,8 @@ import { WeeklyComponent } from './HomePageComponents/weekly/weekly.component';
     MatDialogModule,
     MatButtonModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
+    MatSidenavModule
   ],
   providers: [
     DefectService,
